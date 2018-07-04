@@ -1,0 +1,19 @@
+spring: 
+  jpa:
+    database: H2
+    generate-ddl: false
+    properties: 
+      hibernate: 
+        show_sql: true 
+        use_sql_comments: true
+        format_sql: true
+  datasource:
+    url: jdbc:h2:~/sample
+    username: sa
+    password: 
+    driverClassName: org.h2.Driver
+  app:
+   name: EShop
+   description: ${app.name} is your first Spring Boot application
+welcome:
+    message: Welcome to your first Spring Boot app!
