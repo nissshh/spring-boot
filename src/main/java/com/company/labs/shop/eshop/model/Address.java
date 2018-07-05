@@ -4,9 +4,6 @@
 package com.company.labs.shop.eshop.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -19,20 +16,25 @@ import lombok.RequiredArgsConstructor;
  *
  */
 @Entity
-@Table(name = "ITEM")
+@Table(name = "ADDRESS")
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor
-public class Item {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+public class Address {
+	@NonNull
+	private String address1;
+	
+	@NonNull
+	private String address2;
+	
+	@NonNull
+	private String city;
+	
+	@NonNull
+	private String state;
 
 	@NonNull
-	private String name;
+	private String zipcode;
 
-	@NonNull
-	private Long price;
-
+	private ADDRESS_TYPE type;
 }

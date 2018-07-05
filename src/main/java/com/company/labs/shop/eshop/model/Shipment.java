@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -19,20 +20,23 @@ import lombok.RequiredArgsConstructor;
  *
  */
 @Entity
-@Table(name = "ITEM")
+@Table(name = "SHIPMENT")
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor
-public class Item {
+public class Shipment {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-
+	
 	@NonNull
-	private String name;
-
-	@NonNull
-	private Long price;
+	private Address shipTo;
+	
+	private String tracking;
+	
+	//ref
+	@ManyToOne
+	private Order order;
 
 }

@@ -17,6 +17,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.company.labs.shop.eshop.model.Item;
 
 /**
+ * This test case test the data layer of the application with all the DAO methods
+ * tested as expected.
  * @author Nishant.Sonar
  *
  */

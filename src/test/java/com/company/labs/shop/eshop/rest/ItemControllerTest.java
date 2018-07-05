@@ -3,7 +3,6 @@
  */
 package com.company.labs.shop.eshop.rest;
 
-import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
@@ -65,6 +64,10 @@ public class ItemControllerTest {
 	}
 	
 	
+	/**
+	 * This method will test the POST using the DTO Objects / JSON Pojos 
+	 * @throws Exception
+	 */
 	@Test
 	public void Post_Item() throws Exception {
 		Item item = new Item("Laptop", 100L);
@@ -78,6 +81,11 @@ public class ItemControllerTest {
 		//{"name":"Laptop","price":100L}
 	}
 	
+	/** 
+	 * Helper method fo POJO to JSON conversion
+	 * @param obj
+	 * @return
+	 */
 	public static String asJsonString(final Object obj) {
 	    try {
 	        final ObjectMapper mapper = new ObjectMapper();

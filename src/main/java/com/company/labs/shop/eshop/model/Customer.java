@@ -1,12 +1,13 @@
-/**
- * 
- */
 package com.company.labs.shop.eshop.model;
+
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -14,25 +15,33 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-/**
- * @author Nishant.Sonar
- *
- */
 @Entity
-@Table(name = "ITEM")
+@Table(name = "CUSTOMER")
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor
-public class Item {
+public class Customer {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-
+	
 	@NonNull
-	private String name;
-
+	private String fname;
+	
 	@NonNull
-	private Long price;
-
+	private String lname;
+	
+	@NonNull
+	private String age;
+	
+	@NonNull
+	private String gender;
+	
+	@OneToMany
+	private List<Address> addresses;
+	
+	@OneToMany
+	private List<Order> orders; 
+	
 }

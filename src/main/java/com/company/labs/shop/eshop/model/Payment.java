@@ -3,10 +3,14 @@
  */
 package com.company.labs.shop.eshop.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -23,16 +27,26 @@ import lombok.RequiredArgsConstructor;
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor
-public class Item {
+
+public class Payment {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@NonNull
-	private String name;
-
+	private Long amount;
+	
 	@NonNull
-	private Long price;
+	private Date dueDate;
+	
+	@NonNull
+	private String mode;
+	
+	private String channel;
+	
+	//ref
+	@OneToOne
+	private Order order;
 
 }
