@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import io.micrometer.core.lang.NonNull;
@@ -24,6 +25,7 @@ public class LineItem {
 	private Long id;
 	
 	@NonNull
+	@OneToOne
 	private Item item;
 
 	@NonNull

@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -31,6 +32,7 @@ public class Shipment {
 	private Long id;
 	
 	@NonNull
+	@OneToOne
 	private Address shipTo;
 	
 	private String tracking;
