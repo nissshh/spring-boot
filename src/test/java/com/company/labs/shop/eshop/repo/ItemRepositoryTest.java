@@ -27,10 +27,11 @@ import com.company.labs.shop.eshop.model.Item;
 public class ItemRepositoryTest {
 
 	@Autowired
-    private TestEntityManager testEntityManager;
-
-	@Autowired
 	private ItemRepository itemRepository;
+	
+	@Autowired
+	protected TestEntityManager testEntityManager;
+	
 
 	@Test
 	public void find_all_3_items() throws Exception {
