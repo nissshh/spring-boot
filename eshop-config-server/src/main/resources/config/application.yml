@@ -9,10 +9,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/spring-cloud-samples/config-repo
+          uri: https://github.com/nissshh/cloud-config
           repos:
             - patterns: multi-repo-demo-*
-              uri: https://github.com/spring-cloud-samples/config-repo
+              uri: https://github.com/nissshh/cloud-config
 server:
   port: 8888
 management:
